@@ -1,0 +1,26 @@
+# Jupyter Book 2 / MyST configuration.
+# This single file replaces the Jupyter Book 1 `_config.yml` and `_toc.yml`.
+# Reference: https://mystmd.org/guide/frontmatter and https://mystmd.org/guide/table-of-contents
+version: 1
+project:
+  title: Large Language Models for HEP and Nuclear Physics
+  authors:
+    - name: HSF Training
+  copyright: '2026'
+  license: CC-BY-4.0
+  # Used to build "edit on GitHub" / source links.
+  github: hsf-training/hsf-training-llms-for-hep
+  # BibTeX files for {cite} roles and the {bibliography} directive.
+  bibliography:
+    - references.bib
+  # Table of contents. Only files listed here are built; the first entry is the landing page.
+  toc:
+    - file: intro.md
+    - file: setup.md
+    - file: 01-example.md
+    - file: notebooks.ipynb
+site:
+  template: book-theme
+  options:
+    logo: hsf-logo.png
+    folders: true

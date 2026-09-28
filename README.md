@@ -33,14 +33,25 @@ as well as to the list of contributors [below](#contributors-).
 We'd like to ask you to familiarize yourself with our [Contribution Guide](CONTRIBUTING.md) and have a look at
 the [Jupyter Book documentation][jupyter-book] on proper formatting and how to render the lesson locally.
 
-Quick summary of how to get a local preview: Install the requirements and run [jupyter-book][jupyter-book]:
+Quick summary of how to get a local preview: Install the requirements (you also need
+[Node.js][nodejs] 18 or newer, which [Jupyter Book 2][jupyter-book] uses under the hood)
+and start the live-reloading preview server:
 
 ```bash
 pip install -r requirements.txt
-jupyter-book build book/
+cd book
+jupyter book start --execute
 ```
 
-Then open `book/_build/html/index.html` in your browser.
+Then open the URL printed in the terminal (usually http://localhost:3000).
+To produce the static site that gets deployed, run
+
+```bash
+cd book
+jupyter book build --execute --html --strict
+```
+
+and open `book/_build/html/index.html` in your browser.
 
 Before committing anything, we also ask you to install the [pre-commit][pre-commit] hooks of this repository:
 
@@ -75,6 +86,7 @@ Instead, all regular contributors are listed on our [HSF Training Community page
 
 
 [jupyter-book]: https://jupyterbook.org/
+[nodejs]: https://nodejs.org/
 [pre-commit]: https://pre-commit.com/
 [hsf-training-community]: https://hepsoftwarefoundation.org/training/community
 [hsf-training-center]: https://hepsoftwarefoundation.org/training/curriculum.html

@@ -13,7 +13,7 @@
 
 ## Writing content
 
-Pages are written in [MyST Markdown](https://jupyterbook.org/en/stable/content/myst.html).
+Pages are written in [MyST Markdown](https://mystmd.org/guide).
 Code can be shown with fenced code blocks:
 
 ```python

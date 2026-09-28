@@ -24,9 +24,19 @@ jobs:
           python-version: '3.11'
           cache: pip
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22.x
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+
+      - name: Build the book
+        working-directory: book
+        run: |
+          jupyter book build --execute --html --strict
 
       - name: Pytest tests
         run: |

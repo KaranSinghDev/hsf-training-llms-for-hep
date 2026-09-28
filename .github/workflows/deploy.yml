@@ -1,7 +1,7 @@
 name: deploy
 
-# Build the example book generated with the default cookiecutter values
-# and deploy it to this repository's GitHub Pages as a live demo.
+# Build the book with Jupyter Book 2 (MyST) and deploy it to this
+# repository's GitHub Pages.
 
 on:
   push:
@@ -18,6 +18,10 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+env:
+  # GitHub Pages serves the site under /<repo-name>/, so tell MyST the base path.
+  BASE_URL: /${{ github.event.repository.name }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,13 +34,19 @@ jobs:
           python-version: '3.11'
           cache: pip
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22.x
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
 
       - name: Build the book
+        working-directory: book
         run: |
-          jupyter-book build -W --keep-going book
+          jupyter book build --execute --html --strict
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
