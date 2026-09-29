@@ -9,7 +9,7 @@
 
 **Objectives**
 
-* Understand why Test-Driven Development (TDD) is mandatory when using AI agents.
+* Understand why Test-Driven Development (TDD) is highly recommended when using AI agents.
 * Write a physics-informed test using pytest to validate LLM output against known textbook results.
 :::
 
