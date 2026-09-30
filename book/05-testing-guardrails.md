@@ -37,19 +37,19 @@ def test_invariant_mass_two_photons():
     # Known textbook case: two massless photons moving in opposite directions
     # along the z-axis with E1 = 10 GeV and E2 = 10 GeV.
     # The invariant mass should be exactly 20 GeV.
-    
+
     # Particle 1 (E, px, py, pz)
     e1, px1, py1, pz1 = 10.0, 0.0, 0.0, 10.0
     # Particle 2 (E, px, py, pz)
     e2, px2, py2, pz2 = 10.0, 0.0, 0.0, -10.0
-    
+
     mass = calculate_invariant_mass(e1, px1, py1, pz1, e2, px2, py2, pz2)
-    
+
     # We use math.isclose to account for small floating-point errors
     assert math.isclose(mass, 20.0, rel_tol=1e-3), f"Expected 20.0, but got {mass}"
 ```
 
-:::{admonition} Exercise: Generating and Validating the Code 
+:::{admonition} Exercise: Generating and Validating the Code
 :class: tip
 
 1.  Save the code above in a file called test_kinematics.py.
@@ -61,20 +61,19 @@ def test_invariant_mass_two_photons():
 
 Did the AI get the physics right on the first try? :::
 
-::::{admonition} Solution 
-:class: dropdown 
+::::{admonition} Solution
+:class: dropdown
 Often, standard LLMs might use naive Euclidean geometry instead of the Minkowski metric formulas (i.e., they might add the squares instead of subtracting the momentum squared from the energy squared), causing the test to fail.
 
 If the test fails, do not fix the code yourself. Instead, use the test failure as a prompt to create an iterative feedback loop:
 
-"Your code failed this pytest with the error: AssertionError: Expected 20.0, but got 0.0. You likely used standard spatial distance instead of the relativistic invariant mass formula. Please correct the calculation." 
+"Your code failed this pytest with the error: AssertionError: Expected 20.0, but got 0.0. You likely used standard spatial distance instead of the relativistic invariant mass formula. Please correct the calculation."
 ::::
 
-:::{admonition} Key Points 
+:::{admonition} Key Points
 :class: important
 
   - The human is always responsible for the correctness of scientific code.
   - Never deploy AI-generated physics functions without automated unit tests checking edge cases and known limits.
-  - Use pytest output as direct feedback to prompt the LLM to fix its own hallucinations. 
+  - Use pytest output as direct feedback to prompt the LLM to fix its own hallucinations.
 :::
-                   
