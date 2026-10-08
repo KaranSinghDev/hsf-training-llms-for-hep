@@ -21,7 +21,7 @@ To prevent this, we should use **Scientific-informed guardrails**. Before asking
 
 ## Test-Driven Development (TDD) with LLMs
 
-For explanation below is a a common High-Energy Physics (HEP) scenario: calculating the invariant mass of a particle from two daughter four-vectors.
+As an example, below is a common High-Energy Physics (HEP) scenario: calculating the invariant mass of a particle from two daughter four-vectors.
 
 Instead of asking the LLM to write the code first, we write the test first based on a known physics truth.
 
