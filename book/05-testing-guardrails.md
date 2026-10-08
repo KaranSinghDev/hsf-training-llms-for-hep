@@ -54,7 +54,7 @@ def test_invariant_mass_two_photons():
 
 1.  Save the code above in a file called test_kinematics.py.
 2.  Open your preferred AI assistant (ChatGPT, Claude, or an agentic IDE).
-3.  Prompt the AI: "Write a Python function calculate_invariant_mass(e1, px1, py1, pz1, e2, px2, py2, pz2) that calculates the relativistic invariant massof
+3.  Prompt the AI: "Write a Python function calculate_invariant_mass(e1, px1, py1, pz1, e2, px2, py2, pz2) that calculates the relativistic invariant mass of
     two particles. Return only the code."
 4.  Save the AI output in a file called kinematics.py.
 5.  Run the test in your terminal by executing pytest test_kinematics.py.
