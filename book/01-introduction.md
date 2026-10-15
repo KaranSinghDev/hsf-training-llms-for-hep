@@ -25,7 +25,7 @@ different words in sequence. This is critical to a transformer's ability to gene
 accurate and relevant text, as it allows it to capture contextual information about words
 that are far from each other in the sequence. An example of a transformer being used in a translation task is shown here.
 
-![A transformer translating the sentence "This is an example" into German](fig/transformer.gif)
+![A transformer translating the sentence "This is an example" into German. Gif from [hivenet](https://www.hivenet.com/post/simplifying-transformer-architecture-a-beginners-guide-to-understanding-ai-magic)](fig/transformer.gif)
 
 Building an LLM happens in stages. First, it is trained on a massive, unlabeled dataset of
 text. This dataset must be diverse enought to allow the model to pick up things like syntax,
@@ -34,7 +34,7 @@ to process the text, it must first be tokenized, or broken into individual chunk
 tokens. There are many different methods of tokenization, but a common method
 is to tokenize at the word or sub-word level.
 
-![An example of tokenization](fig/tokenization.png)
+![An example of tokenization. Image from [Medium](https://medium.com/@olga.pilawka/how-ai-understands-language-the-parts-we-know-and-the-parts-that-are-still-mysterious-4210435f1a89)](fig/tokenization.png)
 
 The model extracts weights relating the tokens to each other from the dataset. At
 this stage, the LLM has text completion capabilities, as well as the ability to perform new
