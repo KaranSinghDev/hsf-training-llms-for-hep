@@ -31,7 +31,7 @@ Building an LLM happens in stages. First, it is trained on a massive, unlabeled 
 text. This dataset must be diverse enought to allow the model to pick up things like syntax, 
 semantics, and other grammatical structures of the language. In order for the LLM to be able 
 to process the text, it must first be tokenized, or broken into individual chunks called 
-tokens and vectorized. There are many different methods of tokenization, but a common method 
+tokens. There are many different methods of tokenization, but a common method 
 is to tokenize at the word or sub-word level. 
 
 ![An example of tokenization](fig/tokenization.png)
