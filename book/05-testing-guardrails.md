@@ -27,26 +27,27 @@ Instead of asking the LLM to write the code first, we write the test first based
 
 ```python
 # test_kinematics.py
-import math
-
-# We assume the LLM will write a function called calculate_invariant_mass
-# inside a file named kinematics.py
+import pytest
+import numpy as np
+import vector
+# Assume the LLM will write a function called calculate_invariant_mass in kinematics.py
 from kinematics import calculate_invariant_mass
 
-def test_invariant_mass_two_photons():
-    # Known textbook case: two massless photons moving in opposite directions
-    # along the z-axis with E1 = 10 GeV and E2 = 10 GeV.
+def test_invariant_mass():
+    # Known textbook case: two massless photons moving in opposite directions 
+    # with E = 10 GeV. 
     # The invariant mass should be exactly 20 GeV.
-
-    # Particle 1 (E, px, py, pz)
-    e1, px1, py1, pz1 = 10.0, 0.0, 0.0, 10.0
-    # Particle 2 (E, px, py, pz)
-    e2, px2, py2, pz2 = 10.0, 0.0, 0.0, -10.0
-
-    mass = calculate_invariant_mass(e1, px1, py1, pz1, e2, px2, py2, pz2)
-
-    # We use math.isclose to account for small floating-point errors
-    assert math.isclose(mass, 20.0, rel_tol=1e-3), f"Expected 20.0, but got {mass}"
+    
+    # Particle 1
+    p1 = vector.obj(px=0.0, py=0.0, pz=10.0, E=10.0)
+    
+    # Particle 2 (Opposite direction)
+    p2 = vector.obj(px=0.0, py=0.0, pz=-10.0, E=10.0)
+    
+    # Passing 2 vector objects instead of 8 separate float arguments
+    mass = calculate_invariant_mass(p1, p2)
+    
+    assert np.isclose(mass, 20.0, rtol=1e-3), f"Expected 20.0, but got {mass}"
 ```
 
 :::{admonition} Exercise: Generating and Validating the Code
@@ -54,8 +55,7 @@ def test_invariant_mass_two_photons():
 
 1.  Save the code above in a file called test_kinematics.py.
 2.  Open your preferred AI assistant (ChatGPT, Claude, or an agentic IDE).
-3.  Prompt the AI: "Write a Python function calculate_invariant_mass(e1, px1, py1, pz1, e2, px2, py2, pz2) that calculates the relativistic invariant mass of
-    two particles. Return only the code."
+3.  Prompt the AI: "Write a Python function calculate_invariant_mass(p1, p2) that takes two Scikit-HEP vector objects and calculates their invariant mass. Return only the code."
 4.  Save the AI output in a file called kinematics.py.
 5.  Run the test in your terminal by executing pytest test_kinematics.py.
 
