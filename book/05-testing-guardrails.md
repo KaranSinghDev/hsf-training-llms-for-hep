@@ -34,19 +34,19 @@ import vector
 from kinematics import calculate_invariant_mass
 
 def test_invariant_mass():
-    # Known textbook case: two massless photons moving in opposite directions 
-    # with E = 10 GeV. 
+    # Known textbook case: two massless photons moving in opposite directions
+    # with E = 10 GeV.
     # The invariant mass should be exactly 20 GeV.
-    
+
     # Particle 1
     p1 = vector.obj(px=0.0, py=0.0, pz=10.0, E=10.0)
-    
+
     # Particle 2 (Opposite direction)
     p2 = vector.obj(px=0.0, py=0.0, pz=-10.0, E=10.0)
-    
+
     # Passing 2 vector objects instead of 8 separate float arguments
     mass = calculate_invariant_mass(p1, p2)
-    
+
     assert np.isclose(mass, 20.0, rtol=1e-3), f"Expected 20.0, but got {mass}"
 ```
 
