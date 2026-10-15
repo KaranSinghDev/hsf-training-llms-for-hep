@@ -19,7 +19,7 @@ project:
     - file: setup.md
     - file: 01-introduction.md
     - file: 03-prompt-engineering.md
-    - file: output_validation.md    
+    - file: output_validation.md
     - file: building-sustainable-software.md
     - title: Toolkit
       children:
