@@ -17,7 +17,8 @@ project:
   toc:
     - file: intro.md
     - file: setup.md
-    - file: 01-example.md
+    - file: 01-introduction.md
+    - file: 03-prompt-engineering.md
     - file: output_validation.md
     - file: notebooks.ipynb
 site:
