@@ -43,7 +43,7 @@ cd book
 jupyter book start --execute
 ```
 
-Then open the URL printed in the terminal. 
+Then open the URL printed in the terminal.
 To produce the static site that gets deployed, run
 
 ```bash

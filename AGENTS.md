@@ -4,10 +4,10 @@ This file provides guidance to agentic tools when working with code in this repo
 
 ## What this is
 
-An HSF (HEP Software Foundation) training module, "Large Language Models for HEP and Nuclear Physics", built as a [Jupyter Book 2](https://jupyterbook.org/) 
-(which is a thin wrapper around the [MyST-MD](https://mystmd.org/) engine, not Sphinx) and deployed to GitHub Pages at https://hsf-training.github.io/hsf-training-llms-for-hep/. 
+An HSF (HEP Software Foundation) training module, "Large Language Models for HEP and Nuclear Physics", built as a [Jupyter Book 2](https://jupyterbook.org/)
+(which is a thin wrapper around the [MyST-MD](https://mystmd.org/) engine, not Sphinx) and deployed to GitHub Pages at https://hsf-training.github.io/hsf-training-llms-for-hep/.
 
-It was generated from the HSF training cookiecutter (Jupyter Book 1) and later migrated to Jupyter Book 2. It is still mostly scaffold: 
+It was generated from the HSF training cookiecutter (Jupyter Book 1) and later migrated to Jupyter Book 2. It is still mostly scaffold:
 the pages under `book/` contain `FIXME` placeholders that are meant to be replaced with real lesson content.
 
 There is no application code — the deliverable is the rendered book.
